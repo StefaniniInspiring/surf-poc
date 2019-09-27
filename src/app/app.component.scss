@@ -1,0 +1,16 @@
+@import '../theme/mat_overrides.scss';
+
+.surf-logo {
+    font-family: 'philly_sansregular';
+    font-size: 28px;
+}
+
+.mat-tab-header {
+    // position: absolute !important;
+    // bottom: 0 !important;
+    // width: 100%;
+}
+
+.mat-tab-label-active {
+    color: map-get($md-secondary, 500);
+}

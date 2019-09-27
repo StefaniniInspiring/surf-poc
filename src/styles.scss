@@ -9,14 +9,15 @@ body {
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
-.mat-tab-labels {
+.mat-tab-labels, .mat-tab-links {
   display: grid !important;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr !important;
 }
 
-.mat-tab-label-content {
+.mat-tab-label-content, .mat-tab-link {
   display: grid !important;
   justify-items: center !important;
+  height: 55px !important;
 }
 
 @import './src/theme/mat_overrides.scss';
