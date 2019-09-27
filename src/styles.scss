@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: auto;
+}
+body {
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.mat-tab-labels {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mat-tab-label-content {
+  display: grid !important;
+  justify-items: center !important;
+}
+
+@import './src/theme/mat_overrides.scss';
+
+@font-face {
+  font-family: 'philly_sansregular';
+  src: url('assets/fonts/phillysans-webfont.woff2') format('woff2'),
+    url('assets/fonts/phillysans-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
