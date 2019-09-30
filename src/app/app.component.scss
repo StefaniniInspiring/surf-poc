@@ -19,6 +19,10 @@
   flex: 1 1 auto;
 }
 
+.selected-tab {
+  opacity: 1 !important;
+}
+
 mat-sidenav {
   width: 46vw;
 }
@@ -47,5 +51,6 @@ mat-sidenav {
 
 .active-link {
   background: map-get($md-primary, A200) !important;
+  text-decoration: underline;
   //color: map-get(map-get($md-secondary, contrast), 500) !important;
 }

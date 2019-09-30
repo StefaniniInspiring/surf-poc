@@ -8,7 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { MaterialModule } from './material/material.module';
 import { PromoComponent } from './pages/promo/promo.component';
 import { VantagensComponent } from './pages/vantagens/vantagens.component';
-import { AboutComponent } from './pages/about/about.component';
+import { PrivacyComponent } from './pages/privacy/privacy.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { AboutComponent } from './pages/about/about.component';
     HomeComponent,
     PromoComponent,
     VantagensComponent,
-    AboutComponent
+    PrivacyComponent
   ],
   imports: [
     BrowserModule,
