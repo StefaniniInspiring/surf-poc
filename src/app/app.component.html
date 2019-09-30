@@ -39,6 +39,7 @@
   <mat-sidenav-content>
     <nav *ngIf="activeLinkIndex !== -1" mat-tab-nav-bar color="accent">
       <a
+      color="accent"
         mat-tab-link
         *ngFor="let link of navLinks"
         [routerLink]="link.link"

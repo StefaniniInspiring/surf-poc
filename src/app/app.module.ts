@@ -9,6 +9,8 @@ import { MaterialModule } from './material/material.module';
 import { PromoComponent } from './pages/promo/promo.component';
 import { VantagensComponent } from './pages/vantagens/vantagens.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { PrivacyComponent } from './pages/privacy/privacy.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]

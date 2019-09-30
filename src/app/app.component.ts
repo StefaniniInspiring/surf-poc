@@ -49,6 +49,15 @@ export class AppComponent {
         this.navLinks.find(tab => tab.link === '.' + this.router.url)
       );
     });
+
+    // const link =
+    //         document.querySelector('link[rel*=\'icon\']') ||
+    //         document.createElement('link');
+    //       link['type'] = 'image/x-icon';
+    //       link['rel'] = 'shortcut icon';
+
+    //       if (this.rede != null) {
+    //         link['href'] = `assets/${this.rede}/favicon.ico`;
   }
 
   close() {

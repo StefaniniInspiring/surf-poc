@@ -5,14 +5,9 @@
   font-size: 28px;
 }
 
-.mat-tab-header {
-  // position: absolute !important;
-  // bottom: 0 !important;
-  // width: 100%;
-}
-
 .mat-tab-label-active {
-  color: map-get($md-secondary, 500);
+  color: map-get($md-accent, 500);
+  //color: get-color(500);
 }
 
 .example-spacer {
@@ -31,7 +26,6 @@ mat-sidenav {
   border-radius: 0px;
   box-shadow: 0px 0px !important;
   background-color: map-get($md-primary, 500);
-  //background: map-get($md-primary, 500);
   mat-card-title {
     text-align: center;
     margin-top: 5px;
