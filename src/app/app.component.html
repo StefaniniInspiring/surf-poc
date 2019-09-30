@@ -1,20 +1,61 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <span class="surf-logo">Surf Telecom</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon aria-hidden="false" aria-label="Menu icon">menu</mat-icon>
+    </button>
   </mat-toolbar-row>
 </mat-toolbar>
 
-<nav *ngIf="activeLinkIndex !== -1" mat-tab-nav-bar color="accent">
-  <a
-    mat-tab-link
-    *ngFor="let link of navLinks"
-    [routerLink]="link.link"
-    routerLinkActive
-    #rla="routerLinkActive"
-    [active]="rla.isActive"
+<mat-sidenav-container hasBackdrop="true">
+  <mat-sidenav
+    #snav
+    (keydown.escape)="snav.close()"
+    [mode]="'over'"
+    position="end"
+    [fixedInViewport]="'true'"
+    fixedTopGap="56"
   >
-    <mat-icon class="example-tab-icon">{{ link.icon }}</mat-icon>
-    <span>{{ link.label }}</span>
-  </a>
-</nav>
-<router-outlet></router-outlet>
+    <mat-card class="menu-card">
+      <div mat-card-avatar class="header-image"></div>
+      <mat-card-title>Convidado</mat-card-title>
+    </mat-card>
+    <mat-nav-list>
+      <a
+        mat-list-item
+        routerLink="home"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="snav.close()"
+      >
+        Ofertas
+      </a>
+      <a
+        mat-list-item
+        routerLink="sobre"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        (click)="snav.close()"
+        >Sobre</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <nav *ngIf="activeLinkIndex !== -1" mat-tab-nav-bar color="accent">
+      <a
+        mat-tab-link
+        *ngFor="let link of navLinks"
+        [routerLink]="link.link"
+        routerLinkActive
+        #rla="routerLinkActive"
+        [active]="rla.isActive"
+      >
+        <mat-icon class="example-tab-icon">{{ link.icon }}</mat-icon>
+        <span>{{ link.label }}</span>
+      </a>
+    </nav>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

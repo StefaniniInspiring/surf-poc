@@ -40,4 +40,8 @@ export class AppComponent {
       );
     });
   }
+
+  close() {
+    console.log('close');
+  }
 }
