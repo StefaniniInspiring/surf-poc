@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { OverlayContainer } from '@angular/cdk/overlay';
+import { ConfigService } from './services/config';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +14,11 @@ export class AppComponent {
   activeLinkIndex = -1;
   sideMenuLinks: any[];
 
-  constructor(private router: Router) {
+  constructor(
+    private router: Router,
+    public overlayContainer: OverlayContainer,
+    public config: ConfigService
+  ) {
     this.navLinks = [
       {
         label: 'Ofertas',
@@ -50,14 +56,9 @@ export class AppComponent {
       );
     });
 
-    // const link =
-    //         document.querySelector('link[rel*=\'icon\']') ||
-    //         document.createElement('link');
-    //       link['type'] = 'image/x-icon';
-    //       link['rel'] = 'shortcut icon';
-
-    //       if (this.rede != null) {
-    //         link['href'] = `assets/${this.rede}/favicon.ico`;
+    const instanceId = window.location.hostname;
+    
+    this.config.setInstance(instanceId);
   }
 
   close() {

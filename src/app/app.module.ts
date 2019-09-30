@@ -11,6 +11,7 @@ import { VantagensComponent } from './pages/vantagens/vantagens.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ConfigService } from './services/config';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { environment } from '../environments/environment';
     MaterialModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [
+    ConfigService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

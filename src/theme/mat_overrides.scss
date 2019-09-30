@@ -1,6 +1,7 @@
 @import '~@angular/material/theming';
 @import 'surf.scss';
-@import 'maga.scss';
+@import 'magamais.scss';
+@import 'correioscelular.scss';
 
 $md-primary: (
   50: var(--primary-50),
@@ -117,6 +118,10 @@ $custom-theme: mat-light-theme(
   $custom-theme-warn
 );
 
+mat-toolbar {
+  color: var(--toolbar-color) !important;
+  background-color: var(--toolbar-background-color) !important;
+}
 //@include angular-material-typography($custom-typography);
 @include angular-material-theme($custom-theme);
 $custom-typography: mat-typography-config($font-family: var(--font-family));

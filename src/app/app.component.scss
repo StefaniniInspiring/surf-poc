@@ -1,8 +1,13 @@
 @import '../theme/mat_overrides.scss';
 
-.surf-logo {
-  font-family: 'philly_sansregular';
-  font-size: 28px;
+// .surf-logo {
+//   font-family: 'philly_sansregular';
+//   font-size: 28px;
+// }
+
+.logo {
+  max-height: 36px;
+  max-width: 48vw;
 }
 
 .mat-tab-label-active {

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:400,500,700,900');
 .surf {
-
   --font-family: Raleway, sans-serif !important;
 
   --primary-100: #f7d8bd;
@@ -84,4 +83,8 @@
   --warn-contrast-A200: #000000;
   --warn-contrast-A400: #000000;
   --warn-contrast-A700: #000000;
+
+  --toolbar-color: var(--primary-contrast-500);
+  --toolbar-background-color:  var(--primary-500);
+
 }
