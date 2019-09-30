@@ -12,6 +12,8 @@ import { PrivacyComponent } from './pages/privacy/privacy.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ConfigService } from './services/config';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -23,13 +25,15 @@ import { ConfigService } from './services/config';
   ],
   imports: [
     BrowserModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
-    ConfigService
+    ConfigService,
+    AngularFirestore
   ],
   bootstrap: [AppComponent]
 })

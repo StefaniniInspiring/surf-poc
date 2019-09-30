@@ -39,7 +39,8 @@ export class AppComponent {
         link: './vantagens',
         icon: 'flight_takeoff',
         sidemenu: true,
-        index: 2
+        index: 2,
+        badge: 2
       }
     ];
 
@@ -56,8 +57,8 @@ export class AppComponent {
       );
     });
 
-    const instanceId = window.location.hostname;
-    
+    const instanceId = window.location.hostname.split('.')[0];
+  
     this.config.setInstance(instanceId);
   }
 

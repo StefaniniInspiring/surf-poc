@@ -6,26 +6,36 @@ body {
 }
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  height: 100vh !important;
+  //font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
 
 .mat-tab-labels, .mat-tab-links {
   display: grid !important;
   grid-template-columns: 1fr 1fr 1fr !important;
+
+  mat-icon {
+    align-self: end;
+  }
+
+  .mat-badge-content {
+    top: -8px !important;
+    right: -30px !important;
+  }
 }
 
 .mat-tab-label-content, .mat-tab-link {
   display: grid !important;
   justify-items: center !important;
-  height: 55px !important;
+  height: 60px !important;
 }
 
 @import './src/theme/mat_overrides.scss';
 
-@font-face {
-  font-family: 'philly_sansregular';
-  src: url('assets/fonts/phillysans-webfont.woff2') format('woff2'),
-    url('assets/fonts/phillysans-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'philly_sansregular';
+//   src: url('assets/fonts/phillysans-webfont.woff2') format('woff2'),
+//     url('assets/fonts/phillysans-webfont.woff') format('woff');
+//   font-weight: normal;
+//   font-style: normal;
+// }

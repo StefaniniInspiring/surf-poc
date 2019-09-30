@@ -49,7 +49,7 @@ mat-sidenav {
 }
 
 .active-link {
-  background: map-get($md-primary, A200) !important;
+  background: map-get($md-primary, A400) !important;
   text-decoration: underline;
   //color: map-get(map-get($md-secondary, contrast), 500) !important;
 }

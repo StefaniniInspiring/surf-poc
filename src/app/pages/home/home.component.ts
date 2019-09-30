@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ContentService } from 'src/app/services/content.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  contents$: Observable<any>;
 
+  constructor(
+    public contents: ContentService
+  ) { }
+    
   ngOnInit() {
+    this.contents$ = this.contents.observeContent('home');
   }
 
 }

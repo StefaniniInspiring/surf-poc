@@ -1,4 +1,8 @@
-.surf-logo {
-    font-family: 'philly_sansregular';
-    font-size: 28px;
+* {
+  font-family: var(--font-family) !important;
 }
+
+.offer-card {
+  max-width: 400px;
+}
+

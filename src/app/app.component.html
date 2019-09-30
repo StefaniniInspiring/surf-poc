@@ -1,8 +1,6 @@
 <mat-toolbar>
   <mat-toolbar-row>
-    <!-- <span class="surf-logo">Surf Telecom</span> -->
-    <!-- <span class="logo"></span> -->
-    <img id="logo" class="logo" src=""/>
+    <img id="logo" class="logo" src="" />
     <span class="example-spacer"></span>
     <button mat-icon-button (click)="snav.toggle()">
       <mat-icon aria-hidden="false" aria-label="Menu icon">menu</mat-icon>
@@ -20,7 +18,7 @@
   >
     <mat-card class="menu-card">
       <div mat-card-avatar class="header-image"></div>
-      <mat-card-title>Convidado</mat-card-title>
+      <mat-card-title>Nome de Usuário</mat-card-title>
     </mat-card>
     <mat-nav-list>
       <div *ngFor="let item of sideMenuLinks">
@@ -41,7 +39,7 @@
   <mat-sidenav-content>
     <nav *ngIf="activeLinkIndex !== -1" mat-tab-nav-bar color="accent">
       <a
-      color="accent"
+        color="accent"
         mat-tab-link
         *ngFor="let link of navLinks"
         [routerLink]="link.link"
@@ -49,7 +47,13 @@
         #rla="routerLinkActive"
         [active]="rla.isActive"
       >
-        <mat-icon class="example-tab-icon">{{ link.icon }}</mat-icon>
+        <mat-icon
+          [matBadge]="link.badge"
+          matBadgeColor="primary"
+          matBadgeOverlap="false"
+          class="example-tab-icon"
+          >{{ link.icon }}</mat-icon
+        >
         <span>{{ link.label }}</span>
       </a>
     </nav>
