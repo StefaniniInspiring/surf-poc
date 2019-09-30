@@ -2,7 +2,18 @@
   font-family: var(--font-family) !important;
 }
 
-.offer-card {
-  max-width: 400px;
+.content {
+    margin-top: 90px;
+    overflow-y: visible !important;
 }
 
+.offers {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 1.5rem;
+    grid-row-gap: 2rem !important;
+    padding-left: 8vw;
+    padding-right: 8vw;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}

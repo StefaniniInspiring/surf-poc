@@ -1,62 +1,64 @@
-<mat-toolbar>
-  <mat-toolbar-row>
-    <img id="logo" class="logo" src="" />
-    <span class="example-spacer"></span>
-    <button mat-icon-button (click)="snav.toggle()">
-      <mat-icon aria-hidden="false" aria-label="Menu icon">menu</mat-icon>
-    </button>
-  </mat-toolbar-row>
-</mat-toolbar>
+<div class="container">
+  <mat-toolbar>
+    <mat-toolbar-row>
+      <img id="logo" class="logo" src="" />
+      <span class="example-spacer"></span>
+      <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon aria-hidden="false" aria-label="Menu icon">menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
 
-<mat-sidenav-container hasBackdrop="true">
-  <mat-sidenav
-    #snav
-    (keydown.escape)="snav.close()"
-    [mode]="'over'"
-    position="end"
-    fixedInViewport="true"
-  >
-    <mat-card class="menu-card">
-      <div mat-card-avatar class="header-image"></div>
-      <mat-card-title>Nome de Usuário</mat-card-title>
-    </mat-card>
-    <mat-nav-list>
-      <div *ngFor="let item of sideMenuLinks">
+  <mat-sidenav-container hasBackdrop="true">
+    <mat-sidenav
+      #snav
+      (keydown.escape)="snav.close()"
+      [mode]="'over'"
+      position="end"
+      fixedInViewport="true"
+    >
+      <mat-card class="menu-card">
+        <div mat-card-avatar class="header-image"></div>
+        <mat-card-title>Nome de Usuário</mat-card-title>
+      </mat-card>
+      <mat-nav-list>
+        <div *ngFor="let item of sideMenuLinks">
+          <a
+            mat-list-item
+            *ngIf="item.sidemenu == true"
+            [routerLink]="item.link"
+            routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="snav.close()"
+          >
+            {{ item.label }}
+          </a>
+        </div>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <nav *ngIf="activeLinkIndex !== -1" mat-tab-nav-bar color="accent">
         <a
-          mat-list-item
-          *ngIf="item.sidemenu == true"
-          [routerLink]="item.link"
-          routerLinkActive="active-link"
-          [routerLinkActiveOptions]="{ exact: true }"
-          (click)="snav.close()"
+          color="accent"
+          mat-tab-link
+          *ngFor="let link of navLinks"
+          [routerLink]="link.link"
+          routerLinkActive="selected-tab"
+          #rla="routerLinkActive"
+          [active]="rla.isActive"
         >
-          {{ item.label }}
+          <mat-icon
+            [matBadge]="link.badge"
+            matBadgeColor="primary"
+            matBadgeOverlap="false"
+            class="example-tab-icon"
+            >{{ link.icon }}</mat-icon
+          >
+          <span>{{ link.label }}</span>
         </a>
-      </div>
-    </mat-nav-list>
-  </mat-sidenav>
-
-  <mat-sidenav-content>
-    <nav *ngIf="activeLinkIndex !== -1" mat-tab-nav-bar color="accent">
-      <a
-        color="accent"
-        mat-tab-link
-        *ngFor="let link of navLinks"
-        [routerLink]="link.link"
-        routerLinkActive="selected-tab"
-        #rla="routerLinkActive"
-        [active]="rla.isActive"
-      >
-        <mat-icon
-          [matBadge]="link.badge"
-          matBadgeColor="primary"
-          matBadgeOverlap="false"
-          class="example-tab-icon"
-          >{{ link.icon }}</mat-icon
-        >
-        <span>{{ link.label }}</span>
-      </a>
-    </nav>
-    <router-outlet></router-outlet>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+      </nav>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
