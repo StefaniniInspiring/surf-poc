@@ -18,7 +18,6 @@
 
 .mat-tab-label-active {
   color: map-get($md-accent, 500);
-  //color: get-color(500);
 }
 
 .example-spacer {
@@ -33,9 +32,9 @@ mat-sidenav {
   width: 46vw;
 }
 
-// mat-sidenav-container {
-//   height: 100%;
-// }
+mat-sidenav-container {
+  height: 100%;
+}
 
 .container {
   display: flex;

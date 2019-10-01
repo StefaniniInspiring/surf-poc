@@ -8,7 +8,26 @@
       </button>
     </mat-toolbar-row>
   </mat-toolbar>
-
+  <nav *ngIf="activeLinkIndex !== -1" mat-tab-nav-bar color="accent">
+    <a
+      color="accent"
+      mat-tab-link
+      *ngFor="let link of navLinks"
+      [routerLink]="link.link"
+      routerLinkActive="selected-tab"
+      #rla="routerLinkActive"
+      [active]="rla.isActive"
+    >
+      <mat-icon
+        [matBadge]="link.badge"
+        matBadgeColor="primary"
+        matBadgeOverlap="false"
+        class="example-tab-icon"
+        >{{ link.icon }}</mat-icon
+      >
+      <span>{{ link.label }}</span>
+    </a>
+  </nav>
   <mat-sidenav-container hasBackdrop="true">
     <mat-sidenav
       #snav
@@ -38,26 +57,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <nav *ngIf="activeLinkIndex !== -1" mat-tab-nav-bar color="accent">
-        <a
-          color="accent"
-          mat-tab-link
-          *ngFor="let link of navLinks"
-          [routerLink]="link.link"
-          routerLinkActive="selected-tab"
-          #rla="routerLinkActive"
-          [active]="rla.isActive"
-        >
-          <mat-icon
-            [matBadge]="link.badge"
-            matBadgeColor="primary"
-            matBadgeOverlap="false"
-            class="example-tab-icon"
-            >{{ link.icon }}</mat-icon
-          >
-          <span>{{ link.label }}</span>
-        </a>
-      </nav>
+      
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

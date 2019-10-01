@@ -2,11 +2,6 @@
   font-family: var(--font-family) !important;
 }
 
-.content {
-    margin-top: 90px;
-    overflow-y: visible !important;
-}
-
 .offers {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
