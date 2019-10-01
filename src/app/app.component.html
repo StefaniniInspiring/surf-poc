@@ -41,6 +41,16 @@
         <mat-card-title>Nome de Usuário</mat-card-title>
       </mat-card>
       <mat-nav-list>
+        <a
+          class="cta-menu"
+          mat-list-item
+          [routerLink]="'./cadastro'"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          (click)="snav.close()"
+        >
+          Entrar / Cadastrar
+        </a>
         <div *ngFor="let item of sideMenuLinks">
           <a
             mat-list-item
@@ -57,7 +67,6 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-      
       <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>

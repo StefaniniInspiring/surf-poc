@@ -1,6 +1,6 @@
-* {
-  font-family: var(--font-family) !important;
-}
+// body {
+//   font-family: var(--font-family) !important;
+// }
 
 .offers {
     display: grid;
@@ -11,4 +11,18 @@
     padding-right: 8vw;
     margin-top: 20px;
     margin-bottom: 50px;
+}
+
+.action-btn {
+    font-size: 12px !important;
+
+    mat-icon {
+        font-size: 16px;
+        margin-top: 5px;
+    }
+}
+
+.activate {
+    width: 100%;
+    font-weight: 700;
 }

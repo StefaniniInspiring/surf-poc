@@ -1,0 +1,47 @@
+h1 {
+  text-align: center;
+}
+
+.buttons {
+  margin-top: 8vh;
+
+  display: grid;
+  justify-items: center;
+  row-gap: 12px;
+  button {
+    font-weight: 700;
+    width: 80vw;
+    max-width: 540px;
+    height: 46px;
+  }
+
+  .google {
+    background-color: #f41c35;
+    color: #fff;
+  }
+
+  .facebook {
+    background-color: #3b4e99;
+    color: #fff;
+  }
+}
+
+.terms {
+    margin-top: 8vh;
+    font-size: 14px !important;
+    text-align: center;
+    a {
+        line-height: 20px;
+    }
+    
+}
+
+.login {
+    
+    text-align: center;
+    margin-top: 7vh;
+    a {
+        font-size: 18px !important;
+        text-decoration: underline;
+    }
+}

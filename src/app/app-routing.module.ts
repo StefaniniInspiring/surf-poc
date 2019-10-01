@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { PromoComponent } from './pages/promo/promo.component';
 import { VantagensComponent } from './pages/vantagens/vantagens.component';
 import { PrivacyComponent } from './pages/privacy/privacy.component';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,9 @@ const routes: Routes = [
   },
   {
     path: 'privacidade' , component: PrivacyComponent
+  },
+  {
+    path: 'cadastro' , component: CadastroComponent
   }
 ];
 

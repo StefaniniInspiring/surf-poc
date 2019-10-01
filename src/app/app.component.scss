@@ -29,7 +29,7 @@
 }
 
 mat-sidenav {
-  width: 46vw;
+  width: 56vw;
 }
 
 mat-sidenav-container {
@@ -77,3 +77,8 @@ mat-sidenav-container {
   min-height: 56px !important;
   max-height: 56px !important;
 }
+
+// .cta-menu {
+//   background-color: map-get($md-warn, 500) !important;
+//   color: map-get(map-get($md-warn, contrast), 500) !important;
+// }

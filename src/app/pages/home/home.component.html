@@ -32,7 +32,6 @@
     </doiv>
   </mat-tab>
 </mat-tab-group> -->
-
 <!-- LOADING AND NO DATA -->
 <div *ngIf="(contents$ | async)?.length > 0; else nodata"></div>
 <ng-template #nodata>
@@ -51,14 +50,15 @@
     <mat-card class="offer-card">
       <mat-card-header>
         <mat-card-title>{{ offer.title }}</mat-card-title>
-        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+        <mat-card-subtitle>válida até 02/11/2019</mat-card-subtitle>
       </mat-card-header>
-      <!-- <img
+      <img
         mat-card-image
         src="https://material.angular.io/assets/img/examples/shiba2.jpg"
         alt="Photo of a Shiba Inu"
-      /> -->
+      />
       <mat-card-content>
+        <button mat-raised-button color="accent" class="activate">ATIVAR OFERTA</button>
         <p>
           The Shiba Inu is the smallest of the six original and distinct spitz
           breeds of dog from Japan. A small, agile dog that copes very well with
@@ -66,8 +66,18 @@
         </p>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button>LIKE</button>
-        <button mat-button>SHARE</button>
+        <button class="action-btn" mat-button>
+          <mat-icon aria-hidden="false" aria-label="Menu icon">
+            thumb_up
+          </mat-icon>
+          12 CURTIR
+        </button>
+        <button class="action-btn" mat-button>
+          <mat-icon aria-hidden="false" aria-label="Menu icon">
+            share
+          </mat-icon>
+          COMPARTILHAR
+        </button>
       </mat-card-actions>
     </mat-card>
   </div>

@@ -14,6 +14,8 @@ import { environment } from '../environments/environment';
 import { ConfigService } from './services/config';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { MatIconModule } from '@angular/material/icon';
+import { CadastroComponent } from './pages/cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { AngularFirestore } from '@angular/fire/firestore';
     HomeComponent,
     PromoComponent,
     VantagensComponent,
-    PrivacyComponent
+    PrivacyComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +32,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
+    MatIconModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
