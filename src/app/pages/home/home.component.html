@@ -39,38 +39,70 @@
     Display empty
   </div>
   <ng-template #loading>
-    <p>Loading</p>
+    <div class="offers">
+      <mat-card class="offer-card" *ngFor="let skelly of spookySkeletons">
+        <mat-card-header>
+          <mat-card-title>
+            <app-skeleton height="30px" width="180px"></app-skeleton>
+          </mat-card-title>
+          <mat-card-subtitle>
+            <app-skeleton height="16px" width="180px"></app-skeleton>
+          </mat-card-subtitle>
+        </mat-card-header>
+        <app-skeleton height="200px" width="100%"></app-skeleton>
+        <mat-card-content>
+          <app-skeleton top="20px" height="40px" width="100%"></app-skeleton>
+          <app-skeleton top="20px" height="16px" width="100%"></app-skeleton>
+          <app-skeleton top="4px" height="16px" width="100%"></app-skeleton>
+          <app-skeleton top="4px" height="16px" width="100%"></app-skeleton>
+          <app-skeleton top="4px" height="16px" width="80%"></app-skeleton>
+        </mat-card-content>
+        <!-- <mat-card-actions>
+        <button class="action-btn" mat-button (click)="like(offer)">
+          <mat-icon aria-hidden="false" aria-label="Menu icon">
+            thumb_up
+          </mat-icon>
+           CURTIR
+        </button>
+        <button class="action-btn" mat-button>
+          <mat-icon aria-hidden="false" aria-label="Menu icon">
+            share
+          </mat-icon>
+          COMPARTILHAR
+        </button>
+      </mat-card-actions> -->
+      </mat-card>
+    </div>
   </ng-template>
 </ng-template>
 <!-- END LOADING AND NO DATA -->
-
 <!-- CONTENT -->
 <div class="offers">
   <div *ngFor="let offer of contents$ | async; let i = index">
     <mat-card class="offer-card">
       <mat-card-header>
         <mat-card-title>{{ offer.title }}</mat-card-title>
-        <mat-card-subtitle>válida até 02/11/2019</mat-card-subtitle>
+        <mat-card-subtitle
+          >válida até
+          {{
+            offer.expiration.toDate() | date: 'dd/MM/yyyy'
+          }}</mat-card-subtitle
+        >
       </mat-card-header>
-      <img
-        mat-card-image
-        src="https://material.angular.io/assets/img/examples/shiba2.jpg"
-        alt="Photo of a Shiba Inu"
-      />
+      <img mat-card-image [src]="offer.img" alt="Offer image" />
       <mat-card-content>
-        <button mat-raised-button color="accent" class="activate">ATIVAR OFERTA</button>
-        <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz
-          breeds of dog from Japan. A small, agile dog that copes very well with
-          mountainous terrain, the Shiba Inu was originally bred for hunting.
-        </p>
+        <button mat-raised-button color="accent" class="activate">
+          ATIVAR OFERTA
+        </button>
+        <p></p>
+        <div [innerHTML]="offer.body"></div>
       </mat-card-content>
       <mat-card-actions>
-        <button class="action-btn" mat-button>
+        <button class="action-btn" mat-button (click)="like(offer)">
           <mat-icon aria-hidden="false" aria-label="Menu icon">
             thumb_up
           </mat-icon>
-          12 CURTIR
+          <span *ngIf="offer.likes > 0">{{ offer.likes }}</span> CURTIR
         </button>
         <button class="action-btn" mat-button>
           <mat-icon aria-hidden="false" aria-label="Menu icon">

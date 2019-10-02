@@ -16,6 +16,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { MatIconModule } from '@angular/material/icon';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
+import { SkeletonComponent } from './components/skeleton/skeleton.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CadastroComponent } from './pages/cadastro/cadastro.component';
     PromoComponent,
     VantagensComponent,
     PrivacyComponent,
-    CadastroComponent
+    CadastroComponent,
+    SkeletonComponent
   ],
   imports: [
     BrowserModule,

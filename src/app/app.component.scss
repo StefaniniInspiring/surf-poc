@@ -1,24 +1,15 @@
 @import '../theme/mat_overrides.scss';
 
-// .surf-logo {
-//   font-family: 'philly_sansregular';
-//   font-size: 28px;
-// }
-
 .logo {
   max-height: 36px;
   max-width: 48vw;
 }
 
-// .mat-tab-nav-bar {
-//   z-index: 9999;
-//   position: fixed !important;
-//   background: white !important;
-// }
-
 .mat-tab-label-active {
   color: map-get($md-accent, 500);
 }
+
+
 
 .example-spacer {
   flex: 1 1 auto;
@@ -58,7 +49,6 @@ mat-sidenav-container {
   }
 
   .header-image {
-    //background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-image: url('/assets/imgs/avatar.png');
     background-size: cover;
     height: 14vh;
@@ -70,15 +60,9 @@ mat-sidenav-container {
 .active-link {
   background: map-get($md-primary, A400) !important;
   text-decoration: underline;
-  //color: map-get(map-get($md-secondary, contrast), 500) !important;
 }
 
 .mat-toolbar-multiple-rows {
   min-height: 56px !important;
   max-height: 56px !important;
 }
-
-// .cta-menu {
-//   background-color: map-get($md-warn, 500) !important;
-//   color: map-get(map-get($md-warn, contrast), 500) !important;
-// }

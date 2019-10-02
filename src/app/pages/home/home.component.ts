@@ -10,6 +10,8 @@ import { Observable } from 'rxjs';
 export class HomeComponent implements OnInit {
 
   contents$: Observable<any>;
+  //dummy array to make many skeletons
+  spookySkeletons = new Array(3);
 
   constructor(
     public contents: ContentService
@@ -17,6 +19,11 @@ export class HomeComponent implements OnInit {
     
   ngOnInit() {
     this.contents$ = this.contents.observeContent('home');
+  }
+
+  like(offer) {
+    offer.likes += 1;
+    this.contents.update(`home/${offer.id}`, offer);
   }
 
 }

@@ -11,7 +11,8 @@ export class ContentService {
   constructor(private afs: AngularFirestore) {}
 
   observeContent(collection) {
-    return this.afs.collection(collection)
+    return this.afs
+      .collection(collection)
       .snapshotChanges()
       .pipe(
         map(actions =>
@@ -22,5 +23,9 @@ export class ContentService {
           })
         )
       );
+  }
+
+  update(doc, data) {
+    this.afs.doc(doc).set(data, { merge: true });
   }
 }
